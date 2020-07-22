@@ -119,7 +119,7 @@ const TaskModal = ({ isOpen, closeModal }) => {
             onChange={handleChange}
             className="form-control"
             value={task.status}
-            placeholder="Personal❓ Work❓ etc.."
+            placeholder="Personal❓ Work❓some etc.."
           />
         </div>
         <div className="form-group">
