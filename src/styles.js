@@ -2,6 +2,8 @@ import styled, { createGlobalStyle } from "styled-components";
 
 export const AddButtonStyle = styled.div`
   font-size: 20px;
+  padding: 5px;
+  margin-top: 10px;
   p {
     display: inline-flex;
     font-family: "Londrina Sketch", cursive;
@@ -34,6 +36,7 @@ body{
 `;
 
 export const ListStyled = styled.div`
+  margin-top: 77px;
   color: black;
   font-family: "Cabin Sketch", cursive;
   font-size: 65px;

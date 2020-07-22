@@ -14,7 +14,7 @@ import { ListStyled } from "../styles";
 const TaskList = () => {
   var today = new Date();
   var todayDate =
-    today.getMonth() + 1 + "/" + today.getDate() + "/" + today.getFullYear();
+    today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
 
   // var tomorrow = new Date();
   // var tomorrowDate =
@@ -44,11 +44,11 @@ const TaskList = () => {
         <AddButton />
 
         <ListStyled className="col-5">
-          <p> - Today</p>
+          <p> - Today's Tasks </p>
           {taskToday}
         </ListStyled>
         <ListStyled className="col-5">
-          <p> - Future</p>
+          <p> - Future Tasks</p>
           {taskFuture}
         </ListStyled>
       </div>
