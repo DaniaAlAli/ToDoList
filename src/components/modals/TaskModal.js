@@ -15,6 +15,8 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
+    backgroundColor: "#50524f",
+    borderRadius: "30px",
   },
 };
 
@@ -35,6 +37,12 @@ const TaskModal = ({ isOpen, closeModal }) => {
     event.preventDefault();
     taskStore.createTask(task);
     closeModal();
+    setTask({
+      name: "",
+      details: "",
+      status: "",
+      click: true,
+    });
   };
 
   return (
@@ -44,41 +52,86 @@ const TaskModal = ({ isOpen, closeModal }) => {
       style={customStyles}
       contentLabel="New Task"
     >
-      <h3> Add a New Task </h3>
+      <h3
+        style={{
+          fontFamily: "Cabin Sketch, cursive",
+          fontWeight: "bold",
+          color: "#45ce00",
+          fontSize: "50px",
+        }}
+      >
+        {" "}
+        Add a New Task{" "}
+      </h3>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Task</label>
+          <label
+            style={{
+              color: "red",
+              fontFamily: "Rock Salt, cursive",
+              fontSize: "20px",
+            }}
+          >
+            Task
+          </label>
           <input
             name="name"
             type="text"
             onChange={handleChange}
             className="form-control"
             value={task.name}
+            placeholder="What do you want to do ✏️ .."
           />
         </div>
 
         <div className="form-group">
-          <label>Details</label>
+          <label
+            style={{
+              color: "red",
+              fontFamily: "Rock Salt, cursive",
+              fontSize: "20px",
+            }}
+          >
+            Details
+          </label>
           <input
             name="details"
             type="text"
             onChange={handleChange}
             className="form-control"
             value={task.details}
+            placeholder="Tell more 📝.."
           />
         </div>
         <div className="form-group">
-          <label>Status</label>
+          <label
+            style={{
+              color: "red",
+              fontFamily: "Rock Salt, cursive",
+              fontSize: "20px",
+            }}
+          >
+            Status
+          </label>
           <input
             name="status"
             type="text"
             onChange={handleChange}
             className="form-control"
             value={task.status}
+            placeholder="Personal❓ Work❓ etc.."
           />
         </div>
         <div className="form-group">
-          <label>Date</label>
+          <label
+            style={{
+              color: "red",
+              fontFamily: "Rock Salt, cursive",
+              fontSize: "20px",
+            }}
+          >
+            Date
+          </label>
           <input
             name="date"
             type="date"
@@ -87,7 +140,15 @@ const TaskModal = ({ isOpen, closeModal }) => {
             value={task.date}
           />
         </div>
-        <CreateButtonStyled className=" btn float-right">
+        <CreateButtonStyled
+          className=" btn float-right"
+          style={{
+            color: "blue",
+            fontFamily: "Londrina Sketch, cursive",
+            fontSize: "30px",
+            fontWeight: "bold",
+          }}
+        >
           Add Task
         </CreateButtonStyled>
       </form>

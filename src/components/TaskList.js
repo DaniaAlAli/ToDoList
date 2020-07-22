@@ -53,7 +53,9 @@ const TaskList = () => {
         </ListStyled>
       </div>
       <div className="row-2">
-        <ListStyled style={{ textAlign: "center" }}>Done {done}</ListStyled>
+        <ListStyled style={{ textAlign: "center", color: "green" }}>
+          Done {done}
+        </ListStyled>
       </div>
     </div>
   );

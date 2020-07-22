@@ -2,13 +2,13 @@ import styled, { createGlobalStyle } from "styled-components";
 
 export const AddButtonStyle = styled.div`
   font-size: 20px;
-  padding: 5px;
-  margin-top: 10px;
+  margin-top: 25px;
+  margin-bottom: 20px;
   p {
     display: inline-flex;
     font-family: "Londrina Sketch", cursive;
     color: green;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
   }
 `;
@@ -16,6 +16,8 @@ export const AddButtonStyle = styled.div`
 export const CreateButtonStyled = styled.button`
   color: red;
   background-color: grey;
+  font-family: "Londrina Sketch", cursive;
+
   &:hover {
     color: grey;
     background-color: red;
@@ -31,12 +33,12 @@ export const DeleteButtonStyled = styled.p`
 export const GlobalStyle = createGlobalStyle`
 body{
   background-image: url("https://img.wallpapersafari.com/desktop/1920/1080/20/86/b3CjtL.jpg");
-
-    }
+  opacity: .9;
+  }
 `;
 
 export const ListStyled = styled.div`
-  margin-top: 77px;
+  margin-top: 142px;
   color: black;
   font-family: "Cabin Sketch", cursive;
   font-size: 65px;
@@ -45,7 +47,7 @@ export const ListStyled = styled.div`
 
 export const ListGroupItemStyled = styled.div`
   font-family: "Rock Salt", cursive;
-  border: 1px solid white;
+  border-bottom: 1px solid white;
   color: red;
 
   h1 {
