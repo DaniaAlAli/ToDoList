@@ -1,29 +1,49 @@
 import { decorate, observable } from "mobx";
-
-//Data
-import tasks from "../tasks";
+import axios from "axios";
 
 class TaskStore {
-  tasks = tasks;
+  tasks = [];
 
-  createTask = (newTask) => {
-    newTask.id = this.tasks[this.tasks.length - 1].id + 1;
-    this.tasks.push(newTask);
+  fetchTasks = async () => {
+    try {
+      const res = await axios.get("http://localhost:8000/tasks");
+      this.tasks = res.data;
+    } catch (error) {
+      console.log("error", error);
+    }
   };
 
-  updateMovie = (updatedTask) => {
-    const task = this.tasks.find((task) => task.id === updatedTask.id);
-    task.click = !task.click;
+  createTask = async (newTask) => {
+    try {
+      const res = await axios.post("http://localhost:8000/tasks", newTask);
+      this.tasks.push(res.data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
-  deleteTask = (taskID) => {
-    this.tasks = this.tasks.filter((task) => task.id !== taskID);
-    console.log(this.tasks);
+  updateTask = async (taskID) => {
+    try {
+      await axios.put(`http://localhost:8000/tasks/${taskID}`);
+      const task = this.tasks.find((task) => task.id === +taskID);
+      task.click = !task.click;
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  deleteTask = async (taskID) => {
+    try {
+      await axios.delete(`http://localhost:8000/tasks/${taskID}`);
+      this.tasks = this.tasks.filter((task) => task.id !== taskID);
+    } catch (error) {
+      console.log("ItemStore -> deleteItem -> error", error);
+    }
   };
 }
 
 decorate(TaskStore, { tasks: observable });
 
 const taskStore = new TaskStore();
-
+taskStore.fetchTasks();
 export default taskStore;

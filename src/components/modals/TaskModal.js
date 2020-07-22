@@ -34,6 +34,7 @@ const TaskModal = ({ isOpen, closeModal }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     taskStore.createTask(task);
+    closeModal();
   };
 
   return (

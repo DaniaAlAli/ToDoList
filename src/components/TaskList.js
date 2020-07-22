@@ -14,7 +14,7 @@ import { ListStyled } from "../styles";
 const TaskList = () => {
   var today = new Date();
   var todayDate =
-    today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+    today.getFullYear() + "-0" + (today.getMonth() + 1) + "-" + today.getDate();
 
   // var tomorrow = new Date();
   // var tomorrowDate =
@@ -27,11 +27,11 @@ const TaskList = () => {
 
   console.log("Date:", todayDate);
   const taskToday = taskStore.tasks
-    .filter((task) => task.date <= todayDate && task.click === true)
+    .filter((task) => task.date === todayDate && task.click === true)
     .map((task) => <TaskItem task={task} key={task.id} />);
 
   const taskFuture = taskStore.tasks
-    .filter((task) => task.date > todayDate && task.click === true)
+    .filter((task) => task.date !== todayDate && task.click === true)
     .map((task) => <TaskItem task={task} key={task.id} />);
 
   const done = taskStore.tasks

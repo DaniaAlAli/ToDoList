@@ -10,7 +10,7 @@ const StatusButton = ({ task }) => {
   return (
     <>
       <StatusButtonStyled
-        onClick={() => taskStore.updateMovie(task)}
+        onClick={() => taskStore.updateTask(task.id)}
         style={{ fontSize: "45%" }}
       >
         {" "}
