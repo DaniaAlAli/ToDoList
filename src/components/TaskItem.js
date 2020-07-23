@@ -20,6 +20,9 @@ const TaskItem = ({ task }) => {
         <p>
           <span>Details:</span> {task.details}
         </p>
+        <p className="duedate">
+          <span>Due Date:</span> {task.date}
+        </p>
       </ListGroupItemStyled>
     </>
   );

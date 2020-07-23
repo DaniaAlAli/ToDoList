@@ -17,7 +17,6 @@ export const CreateButtonStyled = styled.button`
   color: red;
   background-color: grey;
   font-family: "Londrina Sketch", cursive;
-
   &:hover {
     color: grey;
     background-color: red;
@@ -47,7 +46,7 @@ export const ListStyled = styled.div`
 
 export const ListGroupItemStyled = styled.div`
   font-family: "Rock Salt", cursive;
-  border-bottom: 1px solid white;
+  border-bottom: 1.5px solid white;
   color: red;
 
   h1 {
@@ -78,6 +77,10 @@ export const ListGroupItemStyled = styled.div`
       color: black;
       font-weight: bold;
     }
+    &.duedate {
+      color: blue;
+      text-align: center;
+    }
   }
 `;
 
@@ -85,4 +88,22 @@ export const StatusButtonStyled = styled.p`
   float: right;
   text-align: center;
   margin-right: 10px;
+`;
+
+export const TitleWrap = styled.div`
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  margin-top: 63px;
+  text-align: center;
+  color: red;
+  img {
+    width: 35%;
+  }
+`;
+
+export const Title = styled.h1`
+  font-family: "Cabin Sketch", cursive;
+  font-size: 90px;
 `;

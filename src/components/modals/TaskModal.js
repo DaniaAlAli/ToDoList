@@ -15,7 +15,7 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    backgroundColor: "#50524f",
+    background: "#50524f",
     borderRadius: "30px",
   },
 };
@@ -119,7 +119,7 @@ const TaskModal = ({ isOpen, closeModal }) => {
             onChange={handleChange}
             className="form-control"
             value={task.status}
-            placeholder="Personal❓ Work❓some etc.."
+            placeholder="Personal❓ Work❓etc.."
           />
         </div>
         <div className="form-group">
@@ -130,7 +130,7 @@ const TaskModal = ({ isOpen, closeModal }) => {
               fontSize: "20px",
             }}
           >
-            Date
+            Due Date
           </label>
           <input
             name="date"

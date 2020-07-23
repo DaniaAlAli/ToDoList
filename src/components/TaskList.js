@@ -16,15 +16,6 @@ const TaskList = () => {
   var todayDate =
     today.getFullYear() + "-0" + (today.getMonth() + 1) + "-" + today.getDate();
 
-  // var tomorrow = new Date();
-  // var tomorrowDate =
-  //   tomorrow.getDate() +
-  //   1 +
-  //   "/" +
-  //   (tomorrow.getMonth() + 1) +
-  //   "/" +
-  //   tomorrow.getFullYear();
-
   console.log("Date:", todayDate);
   const taskToday = taskStore.tasks
     .filter((task) => task.date === todayDate && task.click === true)
@@ -44,16 +35,24 @@ const TaskList = () => {
         <AddButton />
 
         <ListStyled className="col-5">
-          <p> - Today's Tasks </p>
+          <p style={{ textAlign: "center", marginRight: "15px" }}>
+            {" "}
+            - Today's Tasks{" "}
+          </p>
           {taskToday}
         </ListStyled>
         <ListStyled className="col-5">
-          <p> - Future Tasks</p>
+          <p style={{ textAlign: "center", marginLeft: "15px" }}>
+            {" "}
+            - Future Tasks
+          </p>
           {taskFuture}
         </ListStyled>
       </div>
       <div className="row-2">
-        <ListStyled style={{ textAlign: "center", color: "green" }}>
+        <ListStyled
+          style={{ textAlign: "center", color: "green", marginLeft: "40px" }}
+        >
           Done {done}
         </ListStyled>
       </div>
